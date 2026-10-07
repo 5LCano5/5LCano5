@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "لونار | سرور ماینکرافت ماه",
+      "hasCanvas": false,
+      "bodyTextLen": 3824,
+      "bodyTextHash": "6056a04b1cdadf82dc03de23722d31432eed1c335a8c7ef794e2c1a570151540",
+      "bodyTextPrefix": "… ایونت ماه‌گرفتگی · جمعه ۲۱:۰۰ PLAY.LUNAR.IR کپی آی‌پی LUNAR لو",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "لونار | سرور ماینکرافت ماه",
+      "hasCanvas": false,
+      "bodyTextLen": 3744,
+      "bodyTextHash": "193807ee71b4742835aafe2e84040ef81f7155394b6f6eba9988bf2781bec8f2",
+      "bodyTextPrefix": "… PLAY.LUNAR.IR کپی آی‌پی LUNAR لونار LUNAR NETWORK لونار برترین",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

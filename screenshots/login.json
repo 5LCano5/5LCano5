@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/login",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "لونار | سرور ماینکرافت ماه",
+      "hasCanvas": false,
+      "bodyTextLen": 631,
+      "bodyTextHash": "65366d21811f87661a7090dac12be8d4b3a4fc10396785c67e98704ca9f5965f",
+      "bodyTextPrefix": "۱۱۳ بازیکن آنلاین ایونت ماه‌گرفتگی · جمعه ۲۱:۰۰ PLAY.LUNAR.IR کپ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/login.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "لونار | سرور ماینکرافت ماه",
+      "hasCanvas": false,
+      "bodyTextLen": 538,
+      "bodyTextHash": "306bd015e831b8a8a9be7828a4c42194864fc0a8ce3acc08af97b52749974cfb",
+      "bodyTextPrefix": "۱۱۳ بازیکن آنلاین PLAY.LUNAR.IR کپی آی‌پی LUNAR لونار ACCOUNT ثب",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/login-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/login.json"
+}
