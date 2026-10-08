@@ -37,7 +37,9 @@ function Hero({ status }: { status: { online: number; max: number; ip: string } 
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:py-16">
         <div>
           <p className="en-mark text-xs text-primary">LUNAR NETWORK</p>
-          <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl">لونار سیتی، تجربه ای باور نکردنی</h1>
+          <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl">
+            <span style={{ color: "#D6CAA5" }}>لونار سیتی</span>، تجربه ای باور نکردنی
+          </h1>
           <p className="mt-5 max-w-xl text-muted">
             <strong className="text-fg">لونار</strong> تجربه‌ای فراتر از ماینکرفت معمولی. هر گیم‌مود یک مدار دور ماه است؛ با
             چالش‌ها، پلاگین‌های اختصاصی و مکانیک‌هایی که بازی را از حالت تکراری درمی‌آورند. از بقای اقتصادی تا مون‌وارز،
