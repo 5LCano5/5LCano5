@@ -83,7 +83,7 @@ function Join() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <p className="en-mark text-xs text-primary">HOW TO JOIN</p>
-      <h2 className="mt-2 text-3xl">آموزش ورود به سرور لونار</h2>
+      <h2 className="mt-2 text-3xl">آموزش ورود به سرور لونار سیتی</h2>
       <p className="mt-3 max-w-2xl text-muted">
         برای ورود به سرور ماینکرافت لونار و شروع بازی، این سه مرحله را دنبال کنید.
       </p>
