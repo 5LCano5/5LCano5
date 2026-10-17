@@ -1,8 +1,8 @@
-import { RANK_PERKS } from "@/lib/rank-perks";
 import { createServerFn } from "@tanstack/react-start";
 import { getSql } from "@/lib/db";
 import { authMiddleware } from "@/lib/auth/middleware";
 import { SERVER_IP } from "@/lib/utils";
+import { RANK_PERKS } from "@/lib/rank-perks";
 
 export type Rank = {
   id: string;
@@ -87,10 +87,10 @@ function mapRank(row: RankRow): Rank {
     perks = [];
   }
 
-  // اگر برای این رنک قابلیت اختصاصی تعریف شده باشد،
-  // همان قابلیت‌ها نمایش داده می‌شوند.
-  // در غیر این صورت از قابلیت‌های ذخیره‌شده در دیتابیس استفاده می‌شود.
-  const customPerks = RANK_PERKS[row.id];
+  const customPerks =
+    RANK_PERKS[row.id] ??
+    RANK_PERKS[row.name_en] ??
+    RANK_PERKS[row.name_fa];
 
   return {
     id: row.id,
@@ -202,9 +202,7 @@ export const getPost = createServerFn({ method: "GET" })
 
     const row = rows[0];
 
-    if (!row) {
-      return null;
-    }
+    if (!row) return null;
 
     return {
       slug: row.slug,
@@ -240,9 +238,7 @@ async function ensureProfileRow(
     limit 1
   `;
 
-  if (existing[0]) {
-    return existing[0];
-  }
+  if (existing[0]) return existing[0];
 
   const username =
     fallbackName.replace(/\s+/g, "_").slice(0, 16) ||
@@ -369,18 +365,12 @@ export const updateMcUsername = createServerFn({ method: "POST" })
     }
 
     if (!/^[A-Za-z0-9_]+$/.test(mcUsername)) {
-      throw new Error(
-        "فقط حروف انگلیسی، عدد و زیرخط.",
-      );
+      throw new Error("فقط حروف انگلیسی، عدد و زیرخط.");
     }
 
     const sql = await getSql();
 
-    await ensureProfileRow(
-      sql,
-      context.userId,
-      mcUsername,
-    );
+    await ensureProfileRow(sql, context.userId, mcUsername);
 
     await sql`
       update profiles
@@ -480,9 +470,7 @@ export const getOrder = createServerFn({ method: "GET" })
 
     const order = rows[0];
 
-    if (!order) {
-      return null;
-    }
+    if (!order) return null;
 
     return {
       id: Number(order.id),
@@ -541,11 +529,7 @@ export const payOrder = createServerFn({ method: "POST" })
         and user_id = ${context.userId}
     `;
 
-    await ensureProfileRow(
-      sql,
-      context.userId,
-      "player",
-    );
+    await ensureProfileRow(sql, context.userId, "player");
 
     await sql.query(
       `update profiles
@@ -585,9 +569,7 @@ export const createTicket = createServerFn({ method: "POST" })
     }
 
     if (data.body.length < 8) {
-      throw new Error(
-        "متن پیام را کامل‌تر بنویسید.",
-      );
+      throw new Error("متن پیام را کامل‌تر بنویسید.");
     }
 
     const sql = await getSql();
@@ -708,9 +690,7 @@ export const getTicketThread = createServerFn({ method: "GET" })
 
     const ticket = tickets[0];
 
-    if (!ticket) {
-      return null;
-    }
+    if (!ticket) return null;
 
     const messages = await sql<{
       id: number;

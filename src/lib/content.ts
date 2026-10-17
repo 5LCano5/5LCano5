@@ -8,7 +8,17 @@ export const NAV = [
   { to: "/launcher", label: "لانچر" },
 ] as const;
 
-export const JOIN_STEPS = [
+type JoinStep = {
+  n: string;
+  title: string;
+  body: string;
+  cta?: {
+    to: string;
+    label: string;
+  };
+};
+
+export const JOIN_STEPS: JoinStep[] = [
   {
     n: "۰۱",
     title: "ورود به ماینکرفت",
@@ -171,4 +181,4 @@ export const FAQS = [
     q: "کدام نسخه ماینکرافت؟",
     a: "پیشنهادی: ۱.۲۰ تا ۱.۲۱ از طریق لونار لانچر. نسخه‌های ۱.۱۶ به بالا هم وصل می‌شوند اما گیم‌پلی روی نسخه پیشنهادی بهتر است.",
   },
-] as const;
+];

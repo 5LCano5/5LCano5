@@ -49,7 +49,7 @@ function Shop() {
   async function buy(rank: Rank) {
     try {
       const order = await createOrder({ data: rank.id });
-      window.location.href = `/checkout/${order.id}`;
+      window.location.href = `/checkout/${order.orderId}`;
     } catch (error) {
       console.error(error);
       toast.error("خطا در ایجاد سفارش");
@@ -61,8 +61,7 @@ function Shop() {
       <PageHero
         kicker="SHOP"
         title="فروشگاه لونار سیتی"
-        description="رنک موردنظرت رو انتخاب کن و امکانات بیشتری در سرور داشته باش."
-        image="/images/shop-banner.jpg"
+        subtitle="رنک موردنظرت رو انتخاب کن و امکانات بیشتری در سرور داشته باش."
       />
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
